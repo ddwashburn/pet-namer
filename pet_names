@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: CDDL-1.0
-# Copyright (c) 2020 Daniel Washburn <daniel@washburn.at>
+# Copyright (c) 2020, 2021 Daniel Washburn <daniel@washburn.at>
 
 from hex2words import hex2words
 from secrets import token_hex
@@ -8,12 +8,16 @@ import sys
 
 def main(argv):
     try:
-        num = int(argv[1])
+        names = int(argv[1])
     except:
-        num = 1
+        names = 1
+    try:
+        nbytes = int(argv[2])
+    except:
+        nbytes = 2
 
-    for i in range(num):
-        tok = token_hex(2)
+    for i in range(names):
+        tok = token_hex(nbytes)
         print("_".join(hex2words.hex2words(tok).lower().split()))
 
 if __name__ == "__main__":

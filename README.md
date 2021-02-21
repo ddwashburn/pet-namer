@@ -1,6 +1,6 @@
 # Random Pet Name Generator
 
-This tool uses the [PGP Biometric word list](https://en.wikipedia.org/wiki/PGP_word_list) to generate random two-word pet names, a la Docker friendly names.
+This tool uses the [PGP Biometric word list](https://en.wikipedia.org/wiki/PGP_word_list) to generate random n-word pet names, a la Docker friendly names.
 
 ## Installation
 
@@ -9,13 +9,12 @@ This tool uses the [PGP Biometric word list](https://en.wikipedia.org/wiki/PGP_w
 
 ## Usage
 
-    ./pet_names [n]
+    ./pet_names [m] [n]
 
-        Generate n random pet names. If no value is supplied, the tool defaults to generating a single pet name.
+        Generate m random pet names, n words in length. If no value is supplied, the tool defaults to generating one two-word pet name.
 
 ## Example
 
-    ./pet_names 3
-    burbank_provincial
-    retouch_therapist
-    slowdown_millionaire
+    ./pet_names 2 3
+    talon_publisher_scenic
+    trauma_ohio_zulu
