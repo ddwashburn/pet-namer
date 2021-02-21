@@ -1,0 +1,16 @@
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  script:
+    - apk add --update py-pip
+    - pip install -r requirements.txt
+    - mkdir public
+    - ./pet_names 100 3 > public/index.txt
+    - echo '<html><head></head><body><table>' > public/index.html
+    - cat public/index.txt | sed -e 's/^/<tr><td>/' | sed -e 's#$#</td></tr>#' >> public/index.html
+    - echo '</table></body></html>' >> public/index.html
+  artifacts:
+    paths:
+      - public
